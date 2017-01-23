@@ -12,7 +12,7 @@ app.use(express.bodyParser());
 
 /* redirects to GitHub Repo of the module */
 app.get('/', function(req, res) {
-  res.redirect('https://github.com/kjlyon/TestRepo/');
+  res.redirect('https://github.com/kjlyon/slack-github/');
 });
 
 /* config variables */
