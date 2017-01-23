@@ -10,20 +10,10 @@ var app = express();
 app.use(express.logger());
 app.use(express.bodyParser());
 
-//////For Testing///////
-app.get('/', function (req, res) { res.status(200).send('Hello 1!/n'); });
-
-app.get('/', function (req, res) { res.status(200).send('Hello 2!/n'); });
-
 /* redirects to GitHub Repo of the module */
 app.get('/', function(req, res) {
   res.redirect('https://github.com/kjlyon/slack-github/');
 });
-
-app.get('/', function (req, res) { 
-  res.status(200).send('Hello 2!/n'); 
-});
-
 
 /* config variables */
 var channel = process.env.CHANNEL;
@@ -31,10 +21,8 @@ var username = process.env.USERNAME;
 var url = process.env.URL;
 
 /* returns genarated message to send using request payload by GitHub */
-var generateMessage = function(req, res) {
+var generateMessage = function(req) {
   var result = '';
-  res.status(200).send('Hello 3!/n'); 
-
   var data = req.body;
 
   for(var i=0;i<data.commits.length;i++)
@@ -45,7 +33,6 @@ var generateMessage = function(req, res) {
     result += '<@' + commit.author.username + '>' + ' <' +commit.url+  '|committed:> in <' + repo.url + '|' + repo.name + '> :' + commit.message;
     result += '\n';
   }
-  res.status(200).send('Hello 4!/n'); 
 
   return result;
 }
@@ -86,9 +73,6 @@ app.post('/', function(req, res) {
 
 });
 
-app.get('/', function (req, res) { 
-  res.status(200).send('Hello 5!/n'); 
-});
 
 var port = process.env.PORT || 5000;
 app.listen(port, function() {
