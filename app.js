@@ -24,7 +24,7 @@ var url = process.env.URL;
 var generateMessage = function(req) {
   var result = '';
   var data = req.body;
-
+  console.log(req.body)
   for(var i=0;i<data.commits.length;i++)
   {
     var commit = data.commits[i];
