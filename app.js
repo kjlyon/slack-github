@@ -10,6 +10,9 @@ var app = express();
 app.use(express.logger());
 app.use(express.bodyParser());
 
+//////For Testing///////
+app.get('/', function (req, res) { res.status(200).send('Hello world!'); });
+
 /* redirects to GitHub Repo of the module */
 app.get('/', function(req, res) {
   res.redirect('https://github.com/kjlyon/slack-github/');
