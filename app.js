@@ -1,6 +1,7 @@
 /* required dependencies */
 var request = require('request');
 var express = require('express');
+var uuid = require('uuid')
 
 /* app instance */
 var app = express();
