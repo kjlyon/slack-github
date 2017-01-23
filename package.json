@@ -15,7 +15,7 @@
 
   "repository": {
     "type": "git",
-    "url": "https://github.com/sdslabs/slack-github"
+    "url": "https://github.com/kjlyon/slack-github"
   },
   "keywords": [
     "slack",
