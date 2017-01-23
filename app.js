@@ -11,7 +11,9 @@ app.use(express.bodyParser());
 
 //////For Testing///////
 app.get('/', function (req, res) { res.status(200).send('Hello 1!/n'); });
-
+app.get('/', function (req, res) { 
+  res.status(200).send('Hello 2!/n'); 
+});
 /* redirects to GitHub Repo of the module */
 app.get('/', function(req, res) {
   res.redirect('https://github.com/kjlyon/slack-github/');
