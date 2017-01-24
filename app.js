@@ -6,7 +6,6 @@ var bodyParser = require('body-parser')
 /* app instance */
 var app = express();
 
-
 /* app configurations */
 app.use(express.logger());
 app.use(express.bodyParser());
