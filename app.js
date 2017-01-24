@@ -1,6 +1,7 @@
 /* required dependencies */
 var request = require('request');
 var express = require('express');
+var bodyParser = require('body-parser')
 
 /* app instance */
 var app = express();
@@ -25,6 +26,7 @@ var generateMessage = function(req) {
   var result = '';
   var data = req.body;
   console.log(req.body)
+  console.log("LENGTH %f", req.body.commits.length)
   for(var i=0;i<data.commits.length;i++)
   {
     var commit = data.commits[i];
