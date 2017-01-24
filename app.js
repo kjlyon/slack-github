@@ -24,15 +24,15 @@ var generateMessage = function(req) {
   var result = '';
   var data = req.body;
   console.log(req.body)
-  console.log("LENGTH %f", req.body.commits.length)
-  for(var i=0;i<data.commits.length;i++)
-  {
-    var commit = data.commits[i];
+  // console.log("LENGTH %f", req.body.commits.length)
+  // for(var i=0;i<data.commits.length;i++)
+  // {
+    var commit = data.commits[0];
     var repo = data.repository;
 
     result += '<@' + commit.author.username + '>' + ' <' +commit.url+  '|committed:> in <' + repo.url + '|' + repo.name + '> :' + commit.message;
     result += '\n';
-  }
+  //}
 
   return result;
 }
